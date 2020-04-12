@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+
+    <widget class="BroCode\Maps\Block\MapWidget" id="brocode_maps">
+        <label translate="true">BroCode MapWidget</label>
+        <description>A configurable map widget</description>
+    </widget>
+
+</widgets>
