@@ -8,16 +8,19 @@ here comes the map integration
 
 <script>
 require(['jquery', 'leaflet', 'leaflet-markercluster'], function($) {
-    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    var mymap = L.map('mapid').setView(
+        [<?= $block->getMapCenterLat() ?>, <?= $block->getMapCenterLon() ?>],
+        <?= $block->getMapZoom() ?>
+    );
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mymap);
 
-    $.get('<?= $block->getUrl('brocodemaps/maps/marker') ?>').done(function(data) {
+    $.get('<?= $block->getMapsDataUrl() ?>').done(function(data) {
         var markers = L.markerClusterGroup();
         data.forEach(function(element) {
-            var m = L.marker(element)
-            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            var m = L.marker([element.lat, element.lon])
+            .bindPopup(element.title)
             .openPopup();
             markers.addLayer(m);
         });

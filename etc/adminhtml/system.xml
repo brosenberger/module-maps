@@ -1,0 +1,18 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+
+        <section id="general">
+            <group id="store_location_information" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="110">
+                <label>Store Location Information</label>
+                <field id="lat" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="10">
+                    <label>Store Latitude</label>
+                    <validate>validate-number</validate>
+                </field>
+                <field id="lon" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="15">
+                    <label>Store Longitude</label>
+                    <validate>validate-number</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

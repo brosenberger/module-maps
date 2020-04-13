@@ -18,4 +18,21 @@ use Magento\Widget\Block\BlockInterface;
 class MapWidget extends Template implements BlockInterface
 {
     protected $_template = 'BroCode_Maps::mapwidget.phtml';
+
+    public function getMapCenterLat()
+    {
+        return $this->getData('lat');
+    }
+    public function getMapCenterLon()
+    {
+        return $this->getData('lon');
+    }
+    public function getMapZoom()
+    {
+        return $this->getData('zoom');
+    }
+    public function getMapsDataUrl()
+    {
+        return $this->getUrl('brocodemaps/maps/marker', ['providerId' => $this->getData('mapsProviderId')]);
+    }
 }
