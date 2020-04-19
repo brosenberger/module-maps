@@ -9,17 +9,14 @@
             <parameter name="mapsProviderId" xsi:type="select" visible="true" source_model="BroCode\Maps\Model\Config\Source\MapsProvider">
                 <label translate="true">Maps Provider</label>
             </parameter>
-            <parameter name="zoom" xsi:type="text" required="true" visible="true" sort_order="10">
+            <parameter name="zoom" xsi:type="text" required="false" visible="true" sort_order="10">
                 <label>Maps Zoom factor</label>
-                <value>13</value>
             </parameter>
-            <parameter name="lat" xsi:type="text" required="true" visible="true" sort_order="10">
+            <parameter name="lat" xsi:type="text" required="false" visible="true" sort_order="10">
                 <label>Maps Center Latitude</label>
-                <value>48.1932404</value>
             </parameter>
-            <parameter name="lon" xsi:type="text" required="true" visible="true" sort_order="10">
+            <parameter name="lon" xsi:type="text" required="false" visible="true" sort_order="10">
                 <label>Maps Center Longitude</label>
-                <value>14.0551743</value>
             </parameter>
         </parameters>
     </widget>

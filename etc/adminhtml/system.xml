@@ -1,14 +1,35 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
 
+        <section id="brocode_maps" translate="label" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1" >
+            <label>BroCode Maps Integration</label>
+            <tab>service</tab>
+            <resource>BroCode_Maps::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="zoom" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                    <label>Default Zoom</label>
+                    <validate>validate-number</validate>
+                </field>
+                <field id="lat" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                    <label>Default Center Latitude</label>
+                    <validate>validate-number</validate>
+                </field>
+                <field id="lon" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="15">
+                    <label>Default Center Longitude</label>
+                    <validate>validate-number</validate>
+                </field>
+            </group>
+        </section>
+
         <section id="general">
             <group id="store_location_information" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="110">
                 <label>Store Location Information</label>
-                <field id="lat" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="10">
+                <field id="lat" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
                     <label>Store Latitude</label>
                     <validate>validate-number</validate>
                 </field>
-                <field id="lon" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="15">
+                <field id="lon" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="15">
                     <label>Store Longitude</label>
                     <validate>validate-number</validate>
                 </field>

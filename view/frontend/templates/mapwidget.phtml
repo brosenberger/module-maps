@@ -2,9 +2,7 @@
 /** @var \BroCode\Maps\Block\MapWidget $block */
 ?>
 
-here comes the map integration
-
-<div id="mapid" style="height: 180px;"></div>
+<div id="mapid" class="u-brocode--map" style="height: 180px;"></div>
 
 <script>
 require(['jquery', 'leaflet', 'leaflet-markercluster'], function($) {
@@ -12,8 +10,8 @@ require(['jquery', 'leaflet', 'leaflet-markercluster'], function($) {
         [<?= $block->getMapCenterLat() ?>, <?= $block->getMapCenterLon() ?>],
         <?= $block->getMapZoom() ?>
     );
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    L.tileLayer('<?= $block->getTileUrl() ?>', {
+        attribution: '<?= $block->getTileAttribution() ?>'
     }).addTo(mymap);
 
     $.get('<?= $block->getMapsDataUrl() ?>').done(function(data) {

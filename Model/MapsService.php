@@ -10,6 +10,7 @@ namespace BroCode\Maps\Model;
 
 use BroCode\Maps\Api\MapsDataProviderInterface;
 use BroCode\Maps\Api\MapServiceInterface;
+use BroCode\Maps\Api\MapsTileProviderInterface;
 
 class MapsService implements MapServiceInterface
 {
@@ -17,17 +18,24 @@ class MapsService implements MapServiceInterface
      * @var MapsDataProviderInterface[]
      */
     private $mapsDataProvider;
+    /**
+     * @var MapsTileProviderInterface
+     */
+    private $tileProvider;
 
     /**
      * MapsService constructor.
+     * @param MapsTileProviderInterface $tileProvider
      * @param MapsDataProviderInterface[]|array $mapsDataProvider
      */
     public function __construct(
+        MapsTileProviderInterface $tileProvider,
         $mapsDataProvider = []
     ) {
         foreach ($mapsDataProvider as $provider) {
             $this->mapsDataProvider[$provider->getProviderId()] = $provider;
         }
+        $this->tileProvider = $tileProvider;
     }
 
     /**
@@ -53,6 +61,11 @@ class MapsService implements MapServiceInterface
             $providerOptions[] = ['value'=>$providerId,'label'=>$provider->getProviderLabel()];
         }
         return $providerOptions;
+    }
+
+    public function getTileProvider()
+    {
+        return $this->tileProvider;
     }
 
 

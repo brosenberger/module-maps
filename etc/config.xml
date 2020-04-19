@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+
+        <brocode_maps>
+            <general>
+                <zoom>13</zoom>
+                <lat>48.1932404</lat>
+                <lon>14.0551743</lon>
+            </general>
+        </brocode_maps>
+    </default>
+</config>

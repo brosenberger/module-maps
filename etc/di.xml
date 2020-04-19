@@ -2,6 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
     <preference for="BroCode\Maps\Api\MapServiceInterface" type="BroCode\Maps\Model\MapsService"/>
+    <preference for="BroCode\Maps\Api\MapsTileProviderInterface" type="BroCode\Maps\Model\TileProvider\OpenStreetMapTileProvider"/>
     <preference for="BroCode\Maps\Api\Data\MapsCriteriaInterface" type="BroCode\Maps\Api\Data\MapsCriteria"/>
     <preference for="BroCode\Maps\Api\Data\MapsDataInterface" type="BroCode\Maps\Api\Data\MapsData"/>
 

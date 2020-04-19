@@ -26,6 +26,11 @@ interface MapServiceInterface
     public function findMapsData($criteria, $providerId = null);
 
     /**
+     * @return MapsTileProviderInterface
+     */
+    public function getTileProvider();
+
+    /**
      * @return array
      */
     public function toProviderOptionsArray($withEmpty = false);
